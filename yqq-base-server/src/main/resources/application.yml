@@ -1,0 +1,6 @@
+#配置文件非配置中心加载时该配置有效
+spring:
+  profiles:
+    active:
+    - dev
+    

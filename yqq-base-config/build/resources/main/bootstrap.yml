@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active:
+    - native
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+            file:///G:/cdyqq/code/sourcecode/config/
+          #- file:///E:/config/
+          #- classpath:config/
+server:
+  port: 8888
+logging:
+  config: classpath:log4j2.yml

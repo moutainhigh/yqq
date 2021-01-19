@@ -1,0 +1,50 @@
+description='接口服务 8003'
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+//boot jar
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.yqq.third.bootstrap.MicroThirdApplication'
+    }
+}
+
+configurations {
+    all*.exclude group: 'org.apache.shiro'
+    all*.exclude module: 'spring-boot-starter-tomcat'
+}
+
+dependencies {
+    implementation (name : libs.'ojdbc7')
+//    implementation (name : libs.'iceframework')
+//    implementation (name : libs.'logic_common')
+//    implementation (name : libs.'logic_reverve')
+//    implementation (name : libs.'log4j-1.2.17')
+
+    implementation(
+            project(':yqq-base-commons'),
+
+            libs."hikaricp",
+            libs."mybatis",
+            libs."pagehelper-starter",
+            libs."mysql-connector-java",
+
+            cloudlibs."cloud-starter",
+            cloudlibs."netflix-eureka-client",
+            bootlibs."starter-log4j2",
+            bootlibs."starter-web",
+            libs."disruptor",
+            libs."gson",
+
+            libs."swagger2",
+            libs."swagger-ui",
+            libs."fastjson",
+    )
+
+    testImplementation(
+            bootlibs."starter-test",
+    )
+}
+
+
+

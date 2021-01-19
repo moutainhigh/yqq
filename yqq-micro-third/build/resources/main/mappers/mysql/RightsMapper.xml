@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yqq.third.dao.RightsMapper">
+	<!-- 根据权益编码获取接入编码 -->
+	<select id="getRightsJoinNum" resultType="String">
+		SELECT 
+		       A.F_RIGHTS_JOIN_NUM
+		  FROM TM_RIGHTS A
+		  LEFT JOIN TM_RIGHTS_TYPE B ON A.F_RIGHTS_TYPE_NUM = B.F_RIGHTS_TYPE_NUM
+		  LEFT JOIN TM_RIGHTS_JOIN D ON A.F_RIGHTS_JOIN_NUM = D.F_RIGHTS_JOIN_NUM
+        WHERE A.F_RIGHTS_NUM = #{rightsNum}
+	</select>
+	
+   	<!-- 权益对接参值-->
+	<resultMap id="RightsParamMap" type="com.yqq.third.model.RightsParam">
+   		<id column="F_RIGHTS_NUM"  property="rightsNum"/>
+        <id column="F_PARAM_NUM"  property="paramNum"/>
+        <result column="F_PARAM_NAME"  property="paramName"/>
+        <result column="F_PARAM_VALUE"  property="paramValue"/>
+   	</resultMap>
+   	
+   	<!-- 权益对接参数值列表 -->
+	<select id="queryRightsParamList" resultMap="RightsParamMap">
+		SELECT A.F_RIGHTS_NUM,
+		       A.F_PARAM_NUM,
+		       B.F_PARAM_CAPTION F_PARAM_NAME,
+		       A.F_PARAM_VALUE
+		  FROM TM_RIGTHS_PARAM A
+      	  LEFT JOIN TM_RIGHTS R ON A.F_RIGHTS_NUM = R.F_RIGHTS_NUM
+		  LEFT JOIN TM_LINK_PARAM B ON A.F_PARAM_NUM = B.F_PARAM_NUM AND B.F_RIGHTS_TYPE_NUM = R.F_RIGHTS_TYPE_NUM AND B.F_RIGHTS_JOIN_NUM = R.F_RIGHTS_JOIN_NUM
+    	WHERE A.F_RIGHTS_NUM = #{rightsNum} 
+    	ORDER BY B.F_SERIAL 
+	</select>
+	
+</mapper>

@@ -1,0 +1,37 @@
+description='服务注册与发现 7000'
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+//boot jar
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.yqq.server.bootstrap.EServerApplication'
+    }
+}
+configurations {
+    all*.exclude module: 'spring-boot-starter-tomcat'
+}
+dependencies {
+    implementation(
+            cloudlibs."cloud-starter",
+            cloudlibs."netflix-eureka-server",
+            cloudlibs."starter-config",
+            bootlibs."starter-security",
+
+            bootlibs."starter-log4j2",
+            bootlibs."starter-web",
+            bootlibs."starter-actuator",
+            bootlibs."undertow",
+
+            libs."disruptor",
+            libs."gson",
+            libs."jackson-dataformat-yaml",
+            libs."log4j-web",
+    )
+
+    testImplementation(bootlibs."starter-test")
+}
+
+
+

@@ -1,0 +1,63 @@
+
+description='服务网关 路由、过滤器 7002'
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+//boot jar
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.yqq.gateway.bootstrap.GateWayApplication'
+    }
+}
+
+configurations {
+    all*.exclude module: 'spring-boot-starter-tomcat'
+}
+dependencies {
+    implementation(
+            cloudlibs."cloud-starter",
+            cloudlibs."netflix-eureka-client",
+            cloudlibs."netflix-zuul",
+            cloudlibs."starter-config",
+
+            bootlibs."starter-log4j2",
+
+            bootlibs."starter-web",
+            bootlibs."undertow",
+
+            libs."commons-pool2",
+            libs."commons-io",
+            libs."commons-lang3",
+            libs."commons-net",
+            libs."httpclient",
+
+            libs."disruptor",
+            libs."gson",
+
+            libs."swagger2",
+            libs."swagger-ui",
+            libs."jackson-dataformat-xml",
+            libs."jackson-dataformat-yaml",
+
+            libs."lombok",
+
+            libs."commons-lang3",
+            libs."spring-retry",
+            libs."okhttp",
+            libs."log4j-web",
+
+            cloudlibs."starter-oauth2",
+            cloudlibs."starter-security",
+            bootlibs."oauth2-autoconfigure",
+            libs."jjwt",
+            libs."security-jwt",
+            libs."security-oauth2",
+
+    )
+
+    testImplementation(bootlibs."starter-test")
+}
+
+
+

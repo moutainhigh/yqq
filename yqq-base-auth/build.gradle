@@ -1,0 +1,61 @@
+
+description='服务认证 7001'
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+//boot jar
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.yqq.auth.bootstrap.AuthApplication'
+    }
+}
+
+configurations {
+    all*.exclude module: 'spring-boot-starter-tomcat'
+}
+
+dependencies {
+    implementation (name : libs.'ojdbc7')
+    implementation(
+            cloudlibs."cloud-starter",
+            cloudlibs."netflix-eureka-client",
+            cloudlibs."starter-config",
+
+            cloudlibs."starter-oauth2",
+            cloudlibs."starter-security",
+
+            bootlibs."starter-log4j2",
+            bootlibs."starter-data-redis",
+            bootlibs."oauth2-autoconfigure",
+
+            bootlibs."starter-web",
+            bootlibs."undertow",
+            libs."commons-pool2",
+
+            libs."disruptor",
+            libs."gson",
+
+            libs."swagger2",
+            libs."swagger-ui",
+            libs."jackson-dataformat-xml",
+            libs."jackson-dataformat-yaml",
+            libs."jjwt",
+
+            libs."lombok",
+
+            libs."security-jwt",
+            libs."security-oauth2",
+
+            libs."hikaricp",
+            libs."mybatis",
+            libs."mysql-connector-java",
+            libs."kryo",
+            libs."log4j-web",
+    )
+
+    testImplementation(bootlibs."starter-test")
+}
+
+
+

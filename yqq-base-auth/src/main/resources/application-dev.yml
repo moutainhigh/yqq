@@ -1,0 +1,55 @@
+server:
+  port: 7001
+
+#mybatis config
+mybatis:
+  mapper-locations: classpath*:mappers/oracle/**/*.xml
+  type-aliases-package: 
+  configuration:
+    log-execute-sql: true
+    
+spring:
+  application:
+    name: micro-auth
+  datasource:
+    url: jdbc:oracle:thin:@192.168.22.226:1521/orcl
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: qydev
+    password: qydev
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 5
+      connection-test-query: SELECT 1 FROM DUAL
+      idle-timeout: 10000
+      validation-timeout: 10000
+  redis: 
+    host: 192.168.22.226
+    database: 3
+    port: 6379
+    password: 
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+#注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://admin:123456@localhost:7000/eureka/
+ribbon:
+  ServerListRefreshInterval: 2000
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /v2/api-docs.json
+logging:
+  config: classpath:log4j2-dev.yml

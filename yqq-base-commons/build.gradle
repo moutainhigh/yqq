@@ -1,0 +1,55 @@
+//apply plugin: 'org.springframework.boot'
+
+description='项目基础 公共方法'
+dependencies {
+
+    api(
+
+            cloudlibs."starter-openfeign",
+            cloudlibs."starter-config",
+            bootlibs."starter-data-redis",
+            bootlibs."starter-log4j2",
+            bootlibs."starter-web",
+            bootlibs."undertow",
+
+            libs."disruptor",
+
+            libs."jackson-dataformat-xml",
+            libs."jackson-dataformat-yaml",
+
+
+            libs."kryo",
+
+            libs."jasypt-spring-boot-starter",
+
+            libs."shiro-spring",
+            libs."shiro-ehcache",
+            libs."shiro-web",
+
+            libs."commons-io",
+            libs."commons-lang3",
+            libs."commons-net",
+            libs."commons-pool2",
+            libs."httpclient",
+
+            libs."poi",
+            libs."jsch",
+            libs."mybatis",
+            libs."pagehelper-starter",
+            libs."jjwt",
+            libs."hibernate-validator",
+
+            libs."joda-time",
+
+            libs."swagger2",
+            libs."swagger-ui",
+            libs."swagger-models",
+
+            libs."pinyin4j",
+            libs."okhttp",
+            libs."log4j-web",
+            libs."jaxb-api",
+            libs."logstash-gelf",
+
+    )
+}

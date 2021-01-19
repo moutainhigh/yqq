@@ -1,0 +1,16 @@
+#启用配置中心则删除该属性配置 启用以下注释掉配置
+#spring:
+#  cloud:
+#    config:
+#      enabled: false
+spring:
+  cloud:
+    config:
+      #application-${启用环境}.yml
+      profile: dev
+      #配置文件目录名
+      label: gateway
+      uri: http://127.0.0.1:8888
+
+logging:
+  config: ${spring.cloud.config.uri}/${spring.cloud.config.label}/config/${spring.cloud.config.label}/log4j2-${spring.cloud.config.profile}.yml

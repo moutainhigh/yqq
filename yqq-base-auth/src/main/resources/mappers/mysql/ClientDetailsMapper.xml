@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yqq.auth.dao.ClientDetailsMapper">
+    
+    <resultMap id="ClientDetailMap" type="com.yqq.auth.model.ClientDetail">
+        <id column="F_APP_ID" jdbcType="VARCHAR" property="appId"/>
+        <id column="F_APP_SECRET" jdbcType="VARCHAR" property="appSecret"/>
+        <id column="F_SCOPE" jdbcType="VARCHAR" property="scope"/>
+        <id column="F_GRANT_TYPES" jdbcType="VARCHAR" property="grantTypes"/>
+        <id column="F_ACCESS_TOKEN_VALIDITY" jdbcType="INTEGER" property="accessTokenValidity"/>
+        <id column="F_REFRESH_TOKEN_VALIDITY" jdbcType="INTEGER" property="refreshTokenValidity"/>
+    </resultMap>
+    
+    <select id="getClientDetailByAppId" resultMap="ClientDetailMap" parameterType="java.lang.String">
+      SELECT *
+        FROM TSYS_CLIENT_DETAILS 
+        WHERE F_IS_USE=1 AND F_APP_ID = #{appId,jdbcType=VARCHAR}
+    </select>
+    
+</mapper>
