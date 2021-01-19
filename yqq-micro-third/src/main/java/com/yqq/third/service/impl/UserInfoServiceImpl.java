@@ -12,10 +12,13 @@ public class UserInfoServiceImpl  implements UserInfoService {
    private UserMapper userMapper;
 
     @Override
-    public UserInfoBean getUserBaseInfo(String mobile) {
-        return userMapper.getUserBaseInfo(mobile);
+    public UserInfoBean getUserBaseInfoM(String mobile) {
+        return userMapper.getUserBaseInfoM(mobile);
     }
-
+    @Override
+    public UserInfoBean getUserBaseInfoA(String accont) {
+        return userMapper.getUserBaseInfoA(accont);
+    }
     @Override
     public int insertUserBaseInfo(UserInfoBean userInfoBean) {
         return userMapper.insertUserBaseInfo(userInfoBean);

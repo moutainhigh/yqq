@@ -47,7 +47,7 @@ public class DESUtil {
 	/**
 	 * 加密密钥
 	 */
-	public static final String COMM_DES_PASSWORD="XWTECabcdefg123456ABCDEF!@#$%^1qaz!QAZ";
+	public static final String COMM_DES_PASSWORD="YqqCabcdefg123456ABCDEF!@#$%^1qaz!QAZ";
 
 	/**
 	 * 生成key
@@ -194,8 +194,8 @@ public class DESUtil {
 
 	public static void main(String[] args) {
 		String password = "XWTEC123";
-		String data = "123456789012";
-		String encrypt = DESUtil.encrypt(COMM_DES_PASSWORD, data);
+//		String data = "123456789012";
+		String encrypt = DESUtil.encrypt(COMM_DES_PASSWORD, password);
 		System.out.println(encrypt);
 		System.out.println(DESUtil.decrypt(COMM_DES_PASSWORD, encrypt));
 	}

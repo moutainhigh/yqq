@@ -43,7 +43,7 @@ public class UserInfoBean implements Serializable {
     /** 用户手机号码 */
     private String mobile;
     /** 用户账号*/
-    private String userAccount;
+    private String account;
     /**用户类型*/
     private  String userType;
 
@@ -85,12 +85,12 @@ public class UserInfoBean implements Serializable {
     /** 用户证件类型 */
     private String custIcType;
 
-    public String getUserAccount() {
-        return userAccount;
+    public String getAccount() {
+        return account;
     }
 
-    public void setUserAccount(String userAccount) {
-        this.userAccount = userAccount;
+    public void setAccount(String userAccount) {
+        this.account = account;
     }
 
     /** 用户证件号码 */
@@ -125,10 +125,31 @@ public class UserInfoBean implements Serializable {
      * 用户手机串号
      */
     private String imei;
+
+    public int getAttentions() {
+        return attentions;
+    }
+
+    public void setAttentions(int attentions) {
+        this.attentions = attentions;
+    }
+
+    public int getFans() {
+        return fans;
+    }
+
+    public void setFans(int fans) {
+        this.fans = fans;
+    }
+
     /**注册时间*/
     private String registTime;
     /**出生日期*/
     private String brithday;
+    /** 关注人数*/
+    private int attentions;
+    /** 粉丝数*/
+    private int fans;
 
     public String getBrithday() {
         return brithday;

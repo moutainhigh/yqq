@@ -13,11 +13,7 @@ zuul:
   ignoredServices: '*'
   sensitive-headers: Access-Control-Allow-Origin, Cookie,Set-Cookie
   routes:
-    micro-rights: /rights/**
-    micro-member: /member/**
     micro-third: /third/**
-    micro-shop: /shop/**
-    micro-flow: /gflow/**
     micro-auth:
       path: /auth/**
       strip-prefix: true

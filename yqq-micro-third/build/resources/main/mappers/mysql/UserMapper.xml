@@ -4,6 +4,7 @@
 	<resultMap id="UserInfoMap" type="com.yqq.third.model.UserInfoBean">
 		<id column="F_USER_ID" property="userId"/>
 		<id column="F_USER_MOBILE" property="mobile"/>
+        <id column="F_USER_ACCOUNT" property="account"/>
 		<id column="F_USER_PWD" property="pwd"/>
 		<id column="F_USER_STATE" property="userState"/>
 		<id column="F_CUSTLCTYPE" property="custIcType"/>
@@ -16,14 +17,20 @@
 	</resultMap>
 
 
-	<!-- 根据手机号码获取用户信息-->
-	<select id="getUserBaseInfo" resultMap="UserInfoMap">
-		SELECT A.F_USER_ID,A.F_USER_MOBILE,A.F_USER_PWD FROM T_USER_BASE_INFO A WHERE A.F_USER_MOBILE=#{mobile}
+	<!-- 检索手机号码唯一性-->
+	<select id="getUserBaseInfoM" resultMap="UserInfoMap">
+		SELECT A.F_USER_ID,A.F_USER_MOBILE,A.F_USER_ACCOUNT,A.F_USER_PWD FROM T_USER_BASE_INFO A WHERE
+		A.F_USER_MOBILE=#{mobile}
 	</select>
-	
+	<!-- 检索账号唯一性-->
+	<select id="getUserBaseInfoA" resultMap="UserInfoMap">
+		SELECT A.F_USER_ID,A.F_USER_MOBILE,A.F_USER_ACCOUNT,A.F_USER_PWD FROM T_USER_BASE_INFO A WHERE
+		A.F_USER_ACCOUNT=#{account}
+	</select>
+
 	<insert id="insertUserBaseInfo" parameterType="com.yqq.third.model.UserInfoBean">
-		INSERT INTO T_USER_BASE_INFO  (F_USER_MOBILE,F_USER_PWD,F_USER_STATE,F_USER_REGIST_TIME)
-		VALUES (#{mobile},#{pwd},'1',#{registTime})
+		INSERT INTO T_USER_BASE_INFO  (F_USER_MOBILE,F_USER_ACCOUNT,F_USER_PWD,F_USER_STATE,F_USER_REGIST_TIME)
+		VALUES (#{mobile},#{account},#{pwd},'1',#{registTime})
 	</insert>
 
 

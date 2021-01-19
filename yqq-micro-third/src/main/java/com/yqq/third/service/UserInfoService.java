@@ -8,7 +8,9 @@ public interface UserInfoService {
      * @param mobile
      * @return
      */
-    UserInfoBean getUserBaseInfo(String mobile);
+    UserInfoBean getUserBaseInfoM(String mobile);
+
+    UserInfoBean getUserBaseInfoA(String account);
 
     /**
      * 添加用户基本信息

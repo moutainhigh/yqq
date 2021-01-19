@@ -7,11 +7,18 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface UserMapper {
     /**
-     * 获取用户信息
-     * @param mobie
+     * 检索手机唯一性
+     * @param mobile
      * @return
      */
-    UserInfoBean getUserBaseInfo(String mobie);
+    UserInfoBean getUserBaseInfoM(String mobile);
+
+    /**
+     * 检索账号唯一性
+     * @param account
+     * @return
+     */
+    UserInfoBean getUserBaseInfoA(String account);
 
 
     int insertUserBaseInfo(UserInfoBean userInfoBean);
