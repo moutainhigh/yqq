@@ -1,0 +1,244 @@
+2021-01-18 15:17:00.089 INFO  com.yqq.config.bootstrap.ConfigApplication.logStartupProfileInfo():652 - The following profiles are active: native
+2021-01-18 15:17:04.540 INFO  org.springframework.cloud.context.scope.GenericScope.setSerializationId():295 - BeanFactory id=ff133b0d-913b-31ac-847c-7dac4da69d5e
+2021-01-18 15:17:04.944 WARN  io.undertow.websockets.jsr.handleDeployment():68 - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2021-01-18 15:17:04.989 INFO  io.undertow.servlet.log():364 - Initializing Spring embedded WebApplicationContext
+2021-01-18 15:17:04.990 INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext():284 - Root WebApplicationContext: initialization completed in 4802 ms
+2021-01-18 15:17:07.480 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize():171 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-18 15:17:08.845 INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>():58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-01-18 15:17:08.996 INFO  io.undertow.start():117 - starting server: Undertow - 2.0.27.Final
+2021-01-18 15:17:09.030 INFO  org.xnio.<clinit>():104 - XNIO version 3.3.8.Final
+2021-01-18 15:17:09.085 INFO  org.xnio.nio.<clinit>():55 - XNIO NIO Implementation Version 3.3.8.Final
+2021-01-18 15:17:09.329 INFO  org.springframework.boot.web.embedded.undertow.UndertowServletWebServer.start():144 - Undertow started on port(s) 8888 (http) with context path ''
+2021-01-18 15:17:10.103 INFO  com.yqq.config.bootstrap.ConfigApplication.logStarted():59 - Started ConfigApplication in 13.309 seconds (JVM running for 30.488)
+2021-01-18 15:17:10.104 INFO  com.yqq.config.bootstrap.ConfigApplication.main():24 - start config server application success
+2021-01-18 15:17:12.253 INFO  io.undertow.servlet.log():364 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-18 15:17:12.253 INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean():525 - Initializing Servlet 'dispatcherServlet'
+2021-01-18 15:17:12.308 INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean():547 - Completed initialization in 54 ms
+2021-01-18 15:18:32.751 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/server/application-dev.yml
+2021-01-18 15:18:54.347 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/server/application-dev.yml
+2021-01-18 15:21:33.296 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/auth/application-dev.yml
+2021-01-18 15:21:51.705 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/auth/application-dev.yml
+2021-01-18 15:22:33.047 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/gateway/application-dev.yml
+2021-01-18 15:22:50.446 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/gateway/application-dev.yml
+2021-01-18 15:28:35.443 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 15:29:40.860 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 15:52:20.912 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 16:03:56.271 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 16:19:34.056 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown():208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-18 16:19:34.734 INFO  io.undertow.servlet.log():364 - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2021-01-18 16:19:34.750 INFO  io.undertow.stop():252 - stopping server: Undertow - 2.0.27.Final
+2021-01-18 16:19:36.896 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener.logMessage():136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-01-18 16:19:37.011 ERROR org.springframework.boot.SpringApplication.reportFailure():823 - Application run failed
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(ApplicationShutdownHooks.java:66) ~[?:1.8.0]
+	at java.lang.Runtime.addShutdownHook(Runtime.java:211) ~[?:1.8.0]
+	at org.springframework.context.support.AbstractApplicationContext.registerShutdownHook(AbstractApplicationContext.java:949) ~[spring-context-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:394) [spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) [spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140) [spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.findOne(NativeEnvironmentRepository.java:142) [spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.cloud.config.server.environment.CompositeEnvironmentRepository.findOne(CompositeEnvironmentRepository.java:52) [spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.cloud.config.server.environment.EnvironmentEncryptorEnvironmentRepository.findOne(EnvironmentEncryptorEnvironmentRepository.java:54) [spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.cloud.config.server.resource.ResourceController.retrieve(ResourceController.java:116) [spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.cloud.config.server.resource.ResourceController.retrieve(ResourceController.java:77) [spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) [spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893) [spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798) [spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:645) [javax.servlet-api-4.0.1.jar:4.0.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:750) [javax.servlet-api-4.0.1.jar:4.0.1]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:88) [spring-boot-actuator-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114) [spring-boot-actuator-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104) [spring-boot-actuator-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0]
+	at java.lang.Thread.run(Thread.java:744) [?:1.8.0]
+2021-01-18 16:19:37.200 ERROR io.undertow.request.handleThrowable():80 - UT005023: Exception handling request to /third/config/third/log4j2-dev.yml
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.IllegalStateException: Shutdown in progress
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:645) ~[javax.servlet-api-4.0.1.jar:4.0.1]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:750) ~[javax.servlet-api-4.0.1.jar:4.0.1]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:88) ~[spring-boot-actuator-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114) ~[spring-boot-actuator-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104) ~[spring-boot-actuator-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77) ~[undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) ~[undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99) [undertow-servlet-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:376) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830) [undertow-core-2.0.27.Final.jar:2.0.27.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0]
+	at java.lang.Thread.run(Thread.java:744) [?:1.8.0]
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(ApplicationShutdownHooks.java:66) ~[?:1.8.0]
+	at java.lang.Runtime.addShutdownHook(Runtime.java:211) ~[?:1.8.0]
+	at org.springframework.context.support.AbstractApplicationContext.registerShutdownHook(AbstractApplicationContext.java:949) ~[spring-context-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:394) ~[spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140) ~[spring-boot-2.1.10.RELEASE.jar:2.1.10.RELEASE]
+	at org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.findOne(NativeEnvironmentRepository.java:142) ~[spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.cloud.config.server.environment.CompositeEnvironmentRepository.findOne(CompositeEnvironmentRepository.java:52) ~[spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.cloud.config.server.environment.EnvironmentEncryptorEnvironmentRepository.findOne(EnvironmentEncryptorEnvironmentRepository.java:54) ~[spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.cloud.config.server.resource.ResourceController.retrieve(ResourceController.java:116) ~[spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.cloud.config.server.resource.ResourceController.retrieve(ResourceController.java:77) ~[spring-cloud-config-server-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[?:1.8.0]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:893) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:798) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.1.11.RELEASE.jar:5.1.11.RELEASE]
+	... 60 more
+2021-01-18 16:32:39.716 INFO  com.yqq.config.bootstrap.ConfigApplication.logStartupProfileInfo():652 - The following profiles are active: native
+2021-01-18 16:32:42.794 INFO  org.springframework.cloud.context.scope.GenericScope.setSerializationId():295 - BeanFactory id=ff133b0d-913b-31ac-847c-7dac4da69d5e
+2021-01-18 16:32:43.318 WARN  io.undertow.websockets.jsr.handleDeployment():68 - UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2021-01-18 16:32:43.447 INFO  io.undertow.servlet.log():364 - Initializing Spring embedded WebApplicationContext
+2021-01-18 16:32:43.448 INFO  org.springframework.web.context.ContextLoader.prepareWebApplicationContext():284 - Root WebApplicationContext: initialization completed in 3674 ms
+2021-01-18 16:32:44.740 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize():171 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-18 16:32:47.434 INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>():58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-01-18 16:32:47.696 INFO  io.undertow.start():117 - starting server: Undertow - 2.0.27.Final
+2021-01-18 16:32:47.745 INFO  org.xnio.<clinit>():104 - XNIO version 3.3.8.Final
+2021-01-18 16:32:47.779 INFO  org.xnio.nio.<clinit>():55 - XNIO NIO Implementation Version 3.3.8.Final
+2021-01-18 16:32:47.991 INFO  org.springframework.boot.web.embedded.undertow.UndertowServletWebServer.start():144 - Undertow started on port(s) 8888 (http) with context path ''
+2021-01-18 16:32:49.359 INFO  com.yqq.config.bootstrap.ConfigApplication.logStarted():59 - Started ConfigApplication in 15.996 seconds (JVM running for 21.651)
+2021-01-18 16:32:49.361 INFO  com.yqq.config.bootstrap.ConfigApplication.main():24 - start config server application success
+2021-01-18 16:32:50.955 INFO  io.undertow.servlet.log():364 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-18 16:32:50.955 INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean():525 - Initializing Servlet 'dispatcherServlet'
+2021-01-18 16:32:50.977 INFO  org.springframework.web.servlet.DispatcherServlet.initServletBean():547 - Completed initialization in 21 ms
+2021-01-18 16:35:05.425 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/server/application-dev.yml
+2021-01-18 16:35:23.765 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/server/application-dev.yml
+2021-01-18 16:36:06.301 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/auth/application-dev.yml
+2021-01-18 16:36:35.890 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/auth/application-dev.yml
+2021-01-18 16:37:37.052 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/gateway/application-dev.yml
+2021-01-18 16:38:00.044 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/gateway/application-dev.yml
+2021-01-18 16:38:29.405 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 16:45:51.943 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 16:51:36.928 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 17:07:52.762 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 17:14:58.582 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 17:25:50.850 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 17:28:26.077 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 17:33:02.351 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 17:35:08.933 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 17:36:16.751 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/third/application-dev.yml
+2021-01-18 17:49:34.300 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/gateway/application-dev.yml
+2021-01-18 17:49:55.900 INFO  org.springframework.cloud.config.server.environment.NativeEnvironmentRepository.clean():266 - Adding property source: file:///G:/cdyqq/code/sourcecode/config/gateway/application-dev.yml
+2021-01-18 17:50:28.324 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown():208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-18 17:50:28.364 INFO  io.undertow.servlet.log():364 - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2021-01-18 17:50:28.376 INFO  io.undertow.stop():252 - stopping server: Undertow - 2.0.27.Final

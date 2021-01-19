@@ -1,0 +1,8 @@
+rootProject.name = 'cd-yqq'
+include 'yqq-base-config'
+include 'yqq-base-server'
+include 'yqq-base-auth'
+include 'yqq-base-gateway'
+include 'yqq-micro-third'
+include 'yqq-base-commons'
+

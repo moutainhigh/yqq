@@ -1,0 +1,90 @@
+server:
+  port: 8003
+#注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://admin:123456@localhost:7000/eureka/
+ribbon:
+  ServerListRefreshInterval: 2000
+#mybatis config
+mybatis:
+  mapper-locations: classpath*:mappers/mysql/**/*.xml
+  type-aliases-package:
+  configuration:
+    log-execute-sql: true
+#spring 配置
+spring:
+  application:
+    name: micro-third
+  datasource:
+    url: jdbc:mysql://222.186.174.16:3306/yqq
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Passw0rd
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 5
+      connection-test-query: SELECT 1 FROM DUAL
+      idle-timeout: 10000
+      validation-timeout: 10000
+  redis:
+    host: 127.0.0.1
+    database: 3
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /v2/api-docs.json
+
+xw:
+  idtype: redis
+  accessTokenUri: http://127.0.0.1:7002/auth/oauth/token?grant_type=client_credentials
+  env: test
+  ecp:
+    channel: equityCenter_channel
+    url: http://192.168.23.253:9080/wap_ecp/xwecp.do
+    user: qyzx
+    password: qyzx
+  tv:
+    #数业测试
+    url: http://211.139.191.145/mmcs/dispatch
+    #数业内网现网ECP
+    #url: http://192.168.94.225:8002/mmcs/dispatch
+    #数业外网现网
+    #url: http://183.207.103.138/mmcs/dispatch
+  mall:
+    #测试
+    url: http://192.168.20.126:9551/router
+    # 现网
+    #url: http://192.168.94.86:9551/router
+  internet:
+    #外网测试地址
+    url: http://120.197.235.73:3038
+    #内网测试地址
+    #url: http://10.164.10.155:3038
+  mt:
+    #内网生产
+    #url: http://10.32.238.225:8002/openapi77/api/coupon/v1/send
+    #外网
+    url: http://open.waimai.meituan.com/api/coupon/v1/send
+    appid: 1118
+    token: c30dc5c19ebb253827b13ad41f1ce830
+    # F667F7459EE7418494CD09D9B8683277
+    channelUrlKey: 4BC1F862C37E471183B6B612979D1E07
+    aesKey: A0037B4A61D145F3

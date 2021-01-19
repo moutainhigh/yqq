@@ -1,0 +1,140 @@
+apply from: 'dependencyDefinitions.gradle'
+
+description = '根项目'
+// 所有子项目的通用配置
+subprojects {
+    group 'com.yqq'
+
+    apply plugin: 'java-library'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+    // JVM 版本号要求
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    // java编译的时候缺省状态下会因为中文字符而失败
+    // 所以这儿需要改为utf8
+    //
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+    buildscript {
+        repositories {
+            jcenter()
+
+        }
+        dependencies {
+            classpath(
+                    bootlibs.'springbootgradleplugin',
+                    bootlibs.'dependency-management-plugin'
+            )
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs "$rootProject.projectDir/libs"
+        }
+        maven { url "https://maven.aliyun.com/repository/public" }
+    }
+
+    jar {
+        manifest {
+            attributes "Created-By": "${group}"
+            attributes "Implementation-Title": "${archivesBaseName}"
+        }
+    }
+    eclipse {
+        project {
+            name = "${archivesBaseName}"
+        }
+    }
+
+    configurations {
+        all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+        all*.exclude group: "ch.qos.logback", module: "logback-classic"
+        all*.exclude group: "ch.qos.logback", module: "logback-core"
+        all*.exclude group: "org.apache.tomcat", module: "tomcat-jdbc"
+        all*.exclude group: "com.mchange"
+        all*.exclude group: "com.zaxxer", module: "HikariCP-java6"
+        all*.exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+    }
+    task listJars(description: 'Display all compile jars.') {
+        doLast {
+            configurations.compile.each { File file -> println file.name }
+        }
+    }
+    if (it.name.contains('yqq-base-config')
+            || it.name.contains('yqq-base-auth')
+            || it.name.contains('yqq-base-gateway')
+            || it.name.contains('yqq-base-server')
+            || it.name.contains('yqq-micro-third')
+            || it.name.contains('yqq-micro-ext')) {
+        processResources {
+            def env = System.getProperty("profile") ?: "dev"
+            sourceSets {
+                main {
+                    resources {
+                        def envStr = env.toString()
+                        switch (envStr) {
+                        //配置中心模式只保留 bootstrap.yml
+                            case "config":
+                                exclude('application*.yml', 'log4j2-*.yml')
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+
+        task xwRelease(dependsOn: 'bootJar', description: 'Build production jar.') {
+
+            doLast {
+                //复制打好包的文件到根目录的deploy 目录
+                copy {
+                    from("${buildDir}/libs") {
+                        include "**/*.jar"
+                    }
+                    into "${rootDir}/deploy/"
+                }
+            }
+        }
+    }
+
+    if (it.name.contains("xw-pc-static")) {
+        task xwRelease {
+            doLast {
+                def env = System.getProperty("profile") ?: "dev"
+                copy {
+                    from 'src/main/resources/static/'
+                    into "${rootDir}/deploy/webres"
+                }
+                //测试、生成发布时删除 js固定配置文件不发布到测试环境
+                switch (env.toString()) {
+                    case "test":
+                        delete "${rootDir}/deploy/webres/web/project/xa-config.js"
+                        delete "${rootDir}/deploy/webres/web/project/xa-config-prod.js"
+                        file("${rootDir}/deploy/webres/web/project/xa-config-test.js").renameTo(file("${rootDir}/deploy/webres/web/project/xa-config.js"))
+                        break;
+                    case "prod":
+                        delete "${rootDir}/deploy/webres/web/project/xa-config.js"
+                        delete "${rootDir}/deploy/webres/web/project/xa-config-test.js"
+                        file("${rootDir}/deploy/webres/web/project/xa-config-prod.js").renameTo(file("${rootDir}/deploy/webres/web/project/xa-config.js"))
+                        break;
+                    case "dev":
+                        delete "${rootDir}/deploy/webres/web/project/xa-config-prod.js"
+                        delete "${rootDir}/deploy/webres/web/project/xa-config-test.js"
+                        break;
+                    default:
+                        break;
+                }
+                ant.zip(destfile: "${rootDir}/deploy/webres.zip") {
+                    fileset(dir: "${rootDir}/deploy/webres")
+                }
+                delete "${rootDir}/deploy/webres"
+            }
+        }
+    }
+}
+
