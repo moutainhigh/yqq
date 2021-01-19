@@ -32,6 +32,7 @@ public class AuthApplication {
     private final static Logger logger = LoggerFactory.getLogger(AuthApplication.class);
 
     public static void main(String[] args) {
+        
         SpringApplication.run(AuthApplication.class, args);
         logger.info("start auth application success");
     }
