@@ -125,10 +125,31 @@ public class UserInfoBean implements Serializable {
      * 用户手机串号
      */
     private String imei;
+
+    public int getAttentions() {
+        return attentions;
+    }
+
+    public void setAttentions(int attentions) {
+        this.attentions = attentions;
+    }
+
+    public int getFans() {
+        return fans;
+    }
+
+    public void setFans(int fans) {
+        this.fans = fans;
+    }
+
     /**注册时间*/
     private String registTime;
     /**出生日期*/
     private String brithday;
+    /** 关注人数*/
+    private int attentions;
+    /** 粉丝数*/
+    private int fans;
 
     public String getBrithday() {
         return brithday;
